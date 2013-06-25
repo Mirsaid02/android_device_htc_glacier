@@ -48,10 +48,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/voicemail-conf.xml:system/etc/voicemail-conf.xml
 
-# Hal
+# GPS
 PRODUCT_PACKAGES += \
-    lights.glacier \
-    sensors.glacier \
     gps.glacier
 
 # Keylayouts
