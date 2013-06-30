@@ -74,15 +74,6 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
     device/htc/glacier/prebuilt/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb
 
-# media config xml file
-PRODUCT_COPY_FILES += \
-    device/htc/glacier/audio_policy.conf:system/etc/audio_policy.conf \
-    device/htc/glacier/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
-    device/htc/glacier/prebuilt/media_codecs.xml:system/etc/media_codecs.xml	
-
-# Wifi firmware
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
-
 # Vold
 PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/vold.fstab:system/etc/vold.fstab
