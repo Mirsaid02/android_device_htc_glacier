@@ -74,10 +74,6 @@ PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
     device/htc/glacier/prebuilt/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb
 
-# Vold
-PRODUCT_COPY_FILES += \
-    device/htc/glacier/prebuilt/vold.fstab:system/etc/vold.fstab
-
 # device specific props
 $(call inherit-product-if-exists, vendor/htc/glacier/device-vendor.mk)
 
