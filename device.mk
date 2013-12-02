@@ -30,14 +30,17 @@ PRODUCT_COPY_FILES += \
 
 # Build.prop additions
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.locationfeatures=1 \
-    ro.com.google.networklocation=1 \
-    ro.com.google.gmsversion=4.0_r1 \
-    ro.setupwizard.enable_bypass=1 \
-    dalvik.vm.lockprof.threshold=500 \
-    dalvik.vm.dexopt-flags=m=y
+    ro.telephony.ril.v3=signalstrengthgsm
+
+# Override /proc/sys/vm/dirty_ratio on UMS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vold.umsdirtyratio=20
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/glacier/overlay
+
+# GPS
+PRODUCT_PACKAGES += \
+    gps.glacier
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -47,10 +50,6 @@ PRODUCT_COPY_FILES += \
 # gsm config xml file
 PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/voicemail-conf.xml:system/etc/voicemail-conf.xml
-
-# GPS
-PRODUCT_PACKAGES += \
-    gps.glacier
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
