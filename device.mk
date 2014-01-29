@@ -36,6 +36,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
 
+# Dummy property to prevent handle_compcache from turnning swap off
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.zram.default=18
+
 DEVICE_PACKAGE_OVERLAYS += device/htc/glacier/overlay
 
 # GPS

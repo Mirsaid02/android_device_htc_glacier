@@ -72,6 +72,9 @@ on boot
     chown bluetooth net_bt_stack /sys/module/htc_bdaddress/parameters/bdaddress
     setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddress
 
+    # TelephonyManager.java requires this
+    chmod 0644 /proc/cmdline
+
     # Bluetooth car dock pin
     chown system system /sys/class/switch/dock/bt_pin
 
@@ -82,8 +85,17 @@ on boot
     chown system system /sys/class/leds/green/blink
     chown system system /sys/class/leds/button-backlight/brightness
     chown system camera /sys/class/leds/flashlight/brightness
-    chmod 0660          /sys/class/leds/flashlight/brightness
+    chmod 0666          /sys/class/leds/flashlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
+
+    # activate zram
+    swapon_all fstab.glacier
+    write /proc/sys/vm/page-cluster 0
+
+    # enable KSM (Kernel samepage mapping)
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/run 1
 
     # MMC devices readahead performance tweak
     write /sys/block/mmcblk1/bdi/read_ahead_kb 1024
