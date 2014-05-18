@@ -58,6 +58,22 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
-BOARD_USES_MMCUTILS := true
-BOARD_HAS_NO_MISC_PARTITION := true
-TARGET_RECOVERY_FSTAB = device/htc/glacier/ramdisk/fstab.glacier
+
+#TWRP / Recovery specific defines
+DEVICE_RESOLUTION := 480x800
+RECOVERY_FSTAB_VERSION := 2
+
+#Not sure why this is needed with twrp. Other devices I've looked at, don't have separate fstab's.
+ifeq ($(RECOVERY_BUILD),)
+    TARGET_RECOVERY_FSTAB = device/htc/glacier/ramdisk/etc/fstab.glacier
+else
+    TARGET_RECOVERY_FSTAB = device/htc/glacier/recovery/recovery.fstab
+endif
+
+TARGET_RECOVERY_INITRC := device/htc/glacier/recovery/init.rc
+TW_NO_SCREEN_BLANK := true
+#HAVE_SELINUX := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+#TW_INCLUDE_DUMLOCK := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"

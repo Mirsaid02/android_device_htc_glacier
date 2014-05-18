@@ -21,13 +21,6 @@ $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 PRODUCT_COPY_FILES += \
     device/htc/glacier/prebuilt/gps.conf:system/etc/gps.conf
 
-# Ramsidk
-PRODUCT_COPY_FILES += \
-    device/htc/glacier/ramdisk/init.glacier.rc:root/init.glacier.rc \
-    device/htc/glacier/ramdisk/init.glacier.usb.rc:root/init.glacier.usb.rc \
-    device/htc/glacier/ramdisk/ueventd.glacier.rc:root/ueventd.glacier.rc \
-    device/htc/glacier/ramdisk/fstab.glacier:root/fstab.glacier
-
 # Build.prop additions
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril.v3=signalstrengthgsm
