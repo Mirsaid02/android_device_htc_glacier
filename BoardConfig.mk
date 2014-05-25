@@ -59,17 +59,12 @@ BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 
+TARGET_RECOVERY_FSTAB = device/htc/glacier/ramdisk/etc/fstab.glacier
+
 #TWRP / Recovery specific defines
 DEVICE_RESOLUTION := 480x800
 RECOVERY_FSTAB_VERSION := 2
-
-#Not sure why this is needed with twrp. Other devices I've looked at, don't have separate fstab's.
-ifeq ($(RECOVERY_BUILD),)
-    TARGET_RECOVERY_FSTAB = device/htc/glacier/ramdisk/etc/fstab.glacier
-else
-    TARGET_RECOVERY_FSTAB = device/htc/glacier/recovery/recovery.fstab
-endif
-
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_INITRC := device/htc/glacier/recovery/init.rc
 TW_NO_SCREEN_BLANK := true
 #HAVE_SELINUX := true
