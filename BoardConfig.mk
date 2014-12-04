@@ -40,7 +40,7 @@ BOARD_USE_LEGACY_TRACKPAD := true
 BOARD_HAVE_HTC_FFC := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := no_console_suspend=1
+BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x04000000
 BOARD_KERNEL_PAGE_SIZE := 4096
 TARGET_KERNEL_CONFIG := evervolv_glacier_defconfig
