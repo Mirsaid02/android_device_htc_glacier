@@ -20,11 +20,6 @@
 # definition file).
 #
 
-# WARNING: This line must come *before* including the proprietary
-# variant, so that it gets overwritten by the parent (which goes
-# against the traditional rules of inheritance).
-USE_CAMERA_STUB := true
-
 # inherit from new common msm7x30
 -include device/htc/msm7x30-common/BoardConfigCommon.mk
 
@@ -59,16 +54,5 @@ BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 
-TARGET_RECOVERY_FSTAB = device/htc/glacier/ramdisk/etc/fstab.glacier
-
-#TWRP / Recovery specific defines
-DEVICE_RESOLUTION := 480x800
+TARGET_RECOVERY_FSTAB = device/htc/glacier/rootdir/etc/fstab.glacier
 RECOVERY_FSTAB_VERSION := 2
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TARGET_RECOVERY_INITRC := device/htc/glacier/recovery/init.rc
-TW_NO_SCREEN_BLANK := true
-#HAVE_SELINUX := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-#TW_INCLUDE_DUMLOCK := true
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"

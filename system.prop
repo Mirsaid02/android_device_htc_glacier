@@ -3,11 +3,11 @@
 #
 ro.sf.lcd_density=240
 
-# Modify MMS APN retry timer from 5s to 2s.
-ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000
-
 rild.libpath=/system/lib/libhtc_ril.so
 ro.telephony.ril.v3=signalstrengthgsm
+
+# Modify MMS APN retry timer from 5s to 2s.
+ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000
 
 # glacier RF team request
 ro.ril.enable.dtm=0
@@ -31,10 +31,8 @@ wifi.supplicant_scan_interval=120
 
 mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2
 
-# Properties of Scalado Denoise param.
-postprocess.iso_midband=400
-postprocess.denoise_level=5
+htc.audio.alt.enable=0
+htc.audio.hac.enable=0
 
-# Recording Audio Workaround
-ro.camera.sound.disabled=1
-
+media.a1026.nsForVoiceRec=0
+media.a1026.enableA1026=1

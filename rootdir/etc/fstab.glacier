@@ -1,0 +1,13 @@
+#<src>                                                <mnt_point>         <type>  <mnt_flags and options>             <fs_mgr_flags>
+/dev/block/platform/msm_sdcc.2/by-name/boot           /boot               emmc    defaults                            recoveryonly
+/dev/block/platform/msm_sdcc.2/by-name/recovery       /recovery           emmc    defaults                            recoveryonly
+/dev/block/platform/msm_sdcc.2/by-name/system         /system             ext4    ro                                  wait
+/dev/block/platform/msm_sdcc.2/by-name/cache          /cache              ext4    noatime,nosuid,nodev,barrier=0      wait
+/dev/block/platform/msm_sdcc.2/by-name/userdata       /data               ext4    noatime,nosuid,nodev,barrier=0      wait
+/dev/block/platform/msm_sdcc.2/by-name/devlog         /devlog             ext4    noatime,nosuid,nodev,barrier=0      wait
+
+#SDCard
+/devices/platform/msm_sdcc.4/mmc_host/mmc2*           auto                auto    defaults                            voldmanaged=sdcard0:1,noemulatedsd
+
+#ZRAM
+/dev/block/zram0				      none                swap    defaults                            zramsize=134217728

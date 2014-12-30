@@ -150,16 +150,10 @@ service akmd /system/bin/akmd
     user compass
     group compass misc input
 
-# Bugreport is triggered by the KEY_VOLUMEUP and BTN_MOUSE keycodes
-service bugreport /system/bin/bugmailer.sh -v
-    class main
-    disabled
-    oneshot
-    keycodes 158 139
-
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p13 /dev/block/mmcblk0p14
     class main
     user root
+    group system
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
