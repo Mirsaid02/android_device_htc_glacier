@@ -1,0 +1,11 @@
+on boot
+    # HTC Camera switch
+    chown system camera /sys/android_camera2/htcwc
+    chmod 0660          /sys/android_camera2/htcwc
+
+    # Device Settings
+    chown system system /sys/class/timed_output/vibrator/voltage_level
+    chown system system /sys/android_touch/sweep2wake
+
+on property:ro.boot.emmc=1
+    start rmt_storage

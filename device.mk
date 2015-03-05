@@ -63,6 +63,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20 \
     ro.zram.default=18
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.target.rc \
+
 # TWRP
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
