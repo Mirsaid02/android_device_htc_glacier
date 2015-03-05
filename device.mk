@@ -63,13 +63,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20 \
     ro.zram.default=18
 
-# Ramdisk
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.glacier.rc:root/init.glacier.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.glacier.usb.rc:root/init.glacier.usb.rc \
-    $(LOCAL_PATH)/rootdir/etc/fstab.glacier:root/fstab.glacier \
-    $(LOCAL_PATH)/rootdir/etc/ueventd.glacier.rc:root/ueventd.glacier.rc
-
 # TWRP
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
