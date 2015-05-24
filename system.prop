@@ -38,3 +38,6 @@ postprocess.denoise_level=5
 # Recording Audio Workaround
 ro.camera.sound.disabled=1
 
+# Art tweaks
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.dex2oat-filter=interpret-only
