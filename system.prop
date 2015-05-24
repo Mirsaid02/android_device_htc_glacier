@@ -36,3 +36,7 @@ htc.audio.hac.enable=0
 
 media.a1026.nsForVoiceRec=0
 media.a1026.enableA1026=1
+
+# Art tweaks
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.dex2oat-filter=interpret-only
