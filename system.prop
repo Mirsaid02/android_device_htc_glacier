@@ -26,6 +26,10 @@ net.tcp.buffersize.hsdpa=4094,87380,393216,4096,16384,110208
 # 0 => WCDMA preferred.
 ro.telephony.default_network=0
 
+# Art tweaks
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.dex2oat-filter=interpret-only
+
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=120
 
