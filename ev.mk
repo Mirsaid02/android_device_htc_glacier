@@ -2,7 +2,7 @@
 $(call inherit-product, device/htc/glacier/device.mk)
 
 # Inherit some common evervolv stuff.
-$(call inherit-product, vendor/ev/config/gsm.mk)
+$(call inherit-product, vendor/ev/config/apns.mk)
 $(call inherit-product, vendor/ev/config/common_full_phone.mk)
 
 #
