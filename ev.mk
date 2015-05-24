@@ -26,4 +26,4 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 # Copy compatible prebuilt files
 PRODUCT_COPY_FILES +=  \
-    vendor/ev/prebuilt/wvga/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/ev/bootanimation/wvga.zip:system/media/bootanimation.zip
