@@ -23,7 +23,3 @@ PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank yo
 # Hot reboot
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/ev/overlay/hot_reboot
-
-# Copy compatible prebuilt files
-PRODUCT_COPY_FILES +=  \
-    vendor/ev/prebuilt/wvga/media/bootanimation.zip:system/media/bootanimation.zip
